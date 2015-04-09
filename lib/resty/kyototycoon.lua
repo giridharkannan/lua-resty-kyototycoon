@@ -369,7 +369,11 @@ function _M.get(self, key)
    end
 
    local t = res[1]
-   return t.value, nil
+   if t ~= nil then
+      return t.value, nil
+   else
+      return nil, "Key does not exist"
+   end
 end
 
 
